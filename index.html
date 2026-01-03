@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify | Your Team Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo-icon">T</div>
+                <span class="logo-text">Taskify</span>
+            </div>
+            
+            <nav class="nav-links">
+                <button class="nav-item active" onclick="showSection('tasks')">
+                    <i data-lucide="layout-template"></i> Pages
+                </button>
+                <button class="nav-item" onclick="showSection('calendar')">
+                    <i data-lucide="calendar"></i> Calendar
+                </button>
+                <button class="nav-item">
+                    <i data-lucide="users"></i> Space settings
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="nav-item" id="admin-trigger">
+                    <i data-lucide="shield-check"></i> Admin Access
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="breadcrumb">Spaces / <span id="current-space">Product Development</span></div>
+                <h1 id="page-title">Project Roadmap</h1>
+                <div class="header-actions">
+                    <button class="btn-secondary"><i data-lucide="share-2"></i> Share</button>
+                    <button class="btn-primary" onclick="addTask()">+ Create Task</button>
+                </div>
+            </header>
+
+            <section id="task-workspace" class="workspace-section">
+                <div class="search-bar">
+                    <input type="text" id="taskInput" placeholder="Add a new goal or task...">
+                </div>
+                
+                <div class="task-table-header">
+                    <span>Task Name</span>
+                    <span>Status</span>
+                    <span>Action</span>
+                </div>
+                <div id="task-list" class="task-list">
+                    </div>
+            </section>
+
+            <section id="calendar-workspace" class="workspace-section" style="display: none;">
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
